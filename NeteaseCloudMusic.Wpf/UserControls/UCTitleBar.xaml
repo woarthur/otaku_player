@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="NeteaseCloudMusic.Wpf.UserControls.UCTitleBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NeteaseCloudMusic.Wpf.UserControls"
+             xmlns:shell="clr-namespace:System.Windows.Shell;assembly=PresentationFramework"
+             mc:Ignorable="d" 
+             d:DesignHeight="53" d:DesignWidth="1000" Background="#427ba9">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="MyBackground" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#427ba9" Offset="0.5"/>
+            <GradientStop Color="#448cb4" Offset="0.7"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource MyBackground}">
+        <StackPanel Orientation="Horizontal">
+            <Button Style="{StaticResource NavigateButton}"
+                        Visibility="Collapsed"
+                        x:Name="btnGoBack"
+                        />
+            <TextBlock Text="&#xe7c4;" FontFamily="/#iconfont" VerticalAlignment="Center" FontSize="23" Margin="15 -2 25 0" Foreground="#fffbf9"></TextBlock>
+            <TextBlock Text="鲸风音乐"  Margin="0 0 0 0 "  Foreground="#fffbf9" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal"
+                            shell:WindowChrome.IsHitTestVisibleInChrome="True" Background="{StaticResource MyBackground}">
+            <Button x:Name="btnMinimum"
+                    Content="&#xE921;"
+                    FontSize="10"
+                    Style="{StaticResource NavigateButton}" Background="Transparent"
+                    >
+                <Button.ToolTip>
+                    <ToolTip Style="{StaticResource OldToolTipStyle}" Content="最小化" />
+                </Button.ToolTip>
+            </Button>
+            <Button x:Name="btnMaximumAndRestore"
+                    Content="&#xE922;"
+                    FontSize="10"
+                    Style="{StaticResource NavigateButton}"
+                    Background="Transparent">
+                <Button.ToolTip>
+                    <ToolTip Style="{StaticResource OldToolTipStyle}" Content="最大化"/>
+                </Button.ToolTip>
+            </Button>
+            <Button x:Name="btnClose"
+                    Content="&#xE8BB;"
+                    FontSize="10"
+                    Style="{StaticResource NavigateButton}"
+                    Background="Transparent">
+                <Button.ToolTip>
+                    <ToolTip Style="{StaticResource OldToolTipStyle}" Content="关闭"/>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

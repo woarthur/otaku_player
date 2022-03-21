@@ -1,0 +1,152 @@
+﻿<Page x:Class="NeteaseCloudMusic.Wpf.Pages.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:NeteaseCloudMusic.Wpf.Pages"
+      xmlns:s="clr-namespace:System;assembly=mscorlib"
+      xmlns:model="clr-namespace:NeteaseCloudMusic.Wpf.Model"
+      mc:Ignorable="d" 
+      d:DesignHeight="549" d:DesignWidth="800"
+      Title="AboutPage" >
+    <!--写一下相关的一些组件和实现信息-->
+    <Page.Resources>
+        <LinearGradientBrush x:Key="MyBackground" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#448cb4" Offset="0.2"/>
+            <GradientStop Color="#48a8c7" Offset="0.4"/>
+            <GradientStop Color="#49b5cb" Offset="0.6"/>
+            <GradientStop Color="#51bfcf" Offset="0.8"/>
+            <GradientStop Color="#57afcd" Offset="0.9"/>
+        </LinearGradientBrush>
+        <x:Array x:Key="ComponentItems" Type="{x:Type model:ComponentItem}">
+            <model:ComponentItem Name="MvvmLight" 
+                                 Description="MVVMLight是一个实现MVVM模式的轻量级框架（相对于Prism），能够更好的帮助我们开发WPF 、Windows Phone、Windows 8、SilverLight相关项目"
+                                 WebSite="http://www.mvvmlight.net/"
+                                 License="https://github.com/lbugnion/mvvmlight/blob/master/LICENSE"/>
+            <model:ComponentItem Name="Flurl" 
+                                 Description="A fluent, portable URL builder. To make HTTP calls off the fluent chain, check out Flurl.Http."
+                                 WebSite="https://flurl.dev"
+                                 License="https://licenses.nuget.org/MIT"/>
+            <model:ComponentItem Name="LiteDb" 
+                                 Description="LiteDB - A lightweight embedded .NET NoSQL document store in a single datafile"
+                                 WebSite="https://www.litedb.org"
+                                 License="https://raw.github.com/mbdavid/LiteDB/master/LICENSE"/>
+            <model:ComponentItem Name="NeteaseCloudMusicApi" 
+                                 Description="网易云音乐 API"
+                                 WebSite="https://github.com/wwh1004/NeteaseCloudMusicApi"
+                                 License="https://licenses.nuget.org/MIT"/>
+            <model:ComponentItem Name="Newtonsoft" 
+                                 Description="Json.NET is a popular high-performance JSON framework for .NET"
+                                 WebSite="https://www.newtonsoft.com/json"
+                                 License="https://licenses.nuget.org/MIT"/>
+            <model:ComponentItem Name="Ookii.Dialogs.Wpf" 
+                                 Description="Ookii.Dialogs.Wpf is a class library for .NET applications providing several common dialogs. Included are classes for task dialogs, credential dialogs, progress dialogs, and common file dialogs"
+                                 WebSite="https://github.com/caioproiete/ookii-dialogs-wpf"
+                                 License="https://github.com/caioproiete/ookii-dialogs-wpf/blob/master/LICENSE"/>
+            <model:ComponentItem Name="Costura.Fody" 
+                                 Description="Fody add-in for embedding references as resources."
+                                 WebSite="https://github.com/Fody/Costura"
+                                 License="https://licenses.nuget.org/MIT"/>
+            <model:ComponentItem Name="taglib-sharp" 
+                                 Description="TagLib# (aka taglib-sharp) is a library for reading and writing
+metadata in media files, including video, audio, and photo formats."
+                                 WebSite="https://github.com/mono/taglib-sharp"
+                                 License="www.opensource.org/licenses/lgpl-2.1.php"/>
+            <model:ComponentItem Name="GongSolutions.WPF.DragDrop" 
+                                 Description="An easy to use drag'n'drop framework for WPF applications."
+                                 WebSite="https://github.com/punker76/gong-wpf-dragdrop"
+                                 License="https://www.nuget.org/packages/gong-wpf-dragdrop/2.0.6/license"/>
+            <model:ComponentItem Name="HandyControl" 
+                                 Description="Contains some commonly used simple WPF controls"
+                                 WebSite="https://github.com/NaBian/HandyControl"
+                                 License="https://github.com/HandyOrg/HandyControl/blob/master/LICENSE"/>
+        </x:Array>
+
+        <Style x:Key="TB_Name" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#0f2b38"/>
+        </Style>
+        <Style x:Key="TB_Title" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0 0 20 5"/>
+            <Setter Property="Foreground" Value="#0f2b38"/>
+        </Style>
+        <Style x:Key="TB_Content" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#0f2b38"/>
+            <Setter Property="Margin" Value="0 0 0 5"/>
+            <Setter Property="Foreground" Value="#0f2b38"/>
+        </Style>
+    </Page.Resources>
+    <ScrollViewer>
+        <Grid Margin="0 0" Background="{StaticResource MyBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel Margin="20 0">
+                <TextBlock Text="关于"
+                       FontSize="20"
+                       Padding="0 20" Foreground="#0f2b38"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="名称" Style="{StaticResource TB_Title}"/>
+                    <TextBlock Text="鲸风播放器" Foreground="#0f2b38" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="版本" Style="{StaticResource TB_Title}"/>
+                    <TextBlock x:Name="txtVersion" Foreground="#0f2b38"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="作者" Style="{StaticResource TB_Title}"/>
+                    <TextBlock Text="otaku小许" Foreground="#0f2b38"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Email" Style="{StaticResource TB_Title}"/>
+                    <TextBlock Text="20231106@buaa.edu.cn" Foreground="#0f2b38"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="20 0">
+                <TextBlock Text="声明"
+                       FontSize="20"
+                       Padding="0 20" Foreground="#0f2b38"/>
+                <TextBlock Style="{StaticResource TB_Content}" Text="1、本程序所有资源均来自网易云音乐"/>
+                <TextBlock Style="{StaticResource TB_Content}" Text="2、本程序仅供学习交流编程技术使用"/>
+                <TextBlock Style="{StaticResource TB_Content}" Text="3、如果侵犯您的合法权益，请及时联系本人第一时间删除"/>
+            </StackPanel>
+            <Grid Grid.Row="2" Margin="20 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="组件"
+                       FontSize="20"
+                       Padding="0 20" Foreground="#0f2b38"/>
+                <ItemsControl ItemsSource="{StaticResource ComponentItems}"
+                              Grid.Row="1"
+                              Foreground="#0f2b38">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type model:ComponentItem}">
+                            <StackPanel Margin="0 0 0 10">
+                                <TextBlock Text="{Binding Name}" Style="{StaticResource TB_Name}"/>
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock>
+                                    <Hyperlink Tag="{Binding WebSite}" Click="Hyperlink_Click">
+                                        网站
+                                    </Hyperlink>
+                                    </TextBlock>
+                                    <TextBlock Margin="10 0 0 0">
+                                    <Hyperlink Tag="{Binding License}" Click="Hyperlink_Click">
+                                        License
+                                    </Hyperlink>
+                                    </TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

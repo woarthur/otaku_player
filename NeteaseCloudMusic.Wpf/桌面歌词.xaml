@@ -1,0 +1,23 @@
+﻿<Window x:Class="NeteaseCloudMusic.Wpf.桌面歌词"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NeteaseCloudMusic.Wpf"
+        mc:Ignorable="d"
+        Title="桌面歌词" Height="150" Width="700" WindowStyle="None"
+        AllowsTransparency="True" Background="Transparent">
+    <Grid Background="Transparent" MouseLeftButtonDown="Grid_MouseLeftButtonDown" >
+        <Image Source="pack://application:,,,/Resources/Image/lyric1.png"></Image>
+        <StackPanel>
+               
+             <TextBlock x:Name="主" Height="35" HorizontalAlignment="Left" Margin="110 35 0 0" Foreground="#aed8d4" FontSize="25" FontWeight="Light" ></TextBlock>
+            <TextBlock x:Name="父" Height="35" HorizontalAlignment="Right"  Margin="0 10 80 0" Foreground="#fffaf6" FontSize="25" FontWeight="Light" ></TextBlock>
+            </StackPanel>
+
+       
+
+
+
+    </Grid>
+</Window>
